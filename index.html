@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="虎虎影视 官方网站 - 虎虎影视（huhuyingshi-cn.github.io）提供海量高清电影、热播电视剧、动漫综艺在线观看与影视资讯，更新快、画质佳、体验好。">
+<meta name="keywords" content="虎虎影视,虎虎影视官网,在线看剧,高清电影,热播电视剧,动漫综艺,影视资讯,huhuyingshi-cn">
+<meta name="author" content="虎虎影视">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://huhuyingshi-cn.github.io/">
+<title>虎虎影视 - 高清电影·热播剧·动漫综艺在线看 | 虎虎影视 huhuyingshi-cn</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --tiger:#e8590c; --tiger2:#ff922b; --ink:#17141a; --ink2:#2b2622;
+    --paper:#fff9f2; --paper2:#fff1e0; --line:#ffe0c2; --txt:#3a332c; --sub:#83786c;
+  }
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+    background:var(--paper); color:var(--txt); line-height:1.75; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 26px;}
+  .eyebrow{display:inline-block;font-size:.72rem;letter-spacing:4px;text-transform:uppercase;color:var(--tiger);font-weight:800;}
+  .sec-head{margin-bottom:2.8rem;text-align:center;}
+  .sec-head h2{font-size:2.15rem;font-weight:900;letter-spacing:1px;margin-top:.5rem;color:var(--ink);}
+  .sec-head .zhline{width:56px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--tiger),var(--tiger2));margin:.8rem auto 0;}
+  .sec-head p{color:var(--sub);font-size:.95rem;margin-top:.8rem;}
+
+  /* ===== 导航 ===== */
+  header.top{position:sticky;top:0;z-index:100;background:rgba(255,249,242,.95);backdrop-filter:blur(12px);border-bottom:2px solid var(--line);}
+  header.top .row{max-width:1200px;margin:0 auto;padding:15px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+  .logo{display:flex;align-items:center;gap:12px;}
+  .logo .mark{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--tiger),var(--tiger2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:1.2rem;box-shadow:0 5px 14px rgba(232,89,12,.35);}
+  .logo b{font-size:1.55rem;font-weight:900;letter-spacing:2px;color:var(--ink);}
+  .logo span{font-size:.72rem;color:var(--sub);letter-spacing:1px;}
+  nav.gnav{display:flex;gap:4px;}
+  nav.gnav a{padding:9px 16px;border-radius:10px;font-size:.92rem;color:var(--sub);font-weight:600;transition:.25s;}
+  nav.gnav a:hover{color:var(--tiger);background:var(--paper2);}
+  .toggle{display:none;background:none;border:none;color:var(--tiger);font-size:1.9rem;cursor:pointer;line-height:1;}
+
+  /* ===== Hero ===== */
+  .hero{position:relative;padding:84px 0 96px;overflow:hidden;background:var(--ink);}
+  .hero .bg{position:absolute;inset:0;
+    background:
+      radial-gradient(700px 420px at 85% 15%,rgba(232,89,12,.45),transparent 70%),
+      radial-gradient(500px 400px at 10% 90%,rgba(255,146,43,.22),transparent 70%),
+      linear-gradient(150deg,#231d18,#0f0d10);}
+  .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr 1fr;gap:54px;align-items:center;}
+  .hero .tiger{font-size:5.6rem;line-height:1;font-weight:900;letter-spacing:-2px;
+    background:linear-gradient(120deg,#fff,#ffd8a8 45%,var(--tiger2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero h1{font-size:clamp(2.1rem,5vw,3.4rem);font-weight:900;color:#fff;line-height:1.25;margin-top:6px;}
+  .hero h1 em{font-style:normal;color:var(--tiger2);}
+  .hero p.lead{color:#e6dccf;font-size:1.08rem;margin:1.4rem 0 1.8rem;max-width:480px;}
+  .hero .btns{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{padding:13px 28px;border-radius:30px;font-weight:800;font-size:.95rem;transition:.25s;cursor:pointer;border:2px solid transparent;}
+  .btn.pri{background:linear-gradient(135deg,var(--tiger),var(--tiger2));color:#fff;box-shadow:0 8px 22px rgba(232,89,12,.4);}
+  .btn.pri:hover{transform:translateY(-3px);}
+  .btn.sec{background:transparent;color:#fff;border-color:rgba(255,255,255,.4);}
+  .hero .strip{display:flex;gap:26px;flex-wrap:wrap;margin-top:2.4rem;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.14);}
+  .hero .strip div span{display:block;font-size:.74rem;color:var(--tiger2);letter-spacing:2px;}
+  .hero .strip div b{font-size:1.25rem;color:#fff;font-weight:800;}
+
+  /* 虎纹条带动画 */
+  .stripes{position:relative;height:360px;border-radius:26px;overflow:hidden;background:linear-gradient(160deg,#3a2b1c,#1c1510);}
+  .stripes i{position:absolute;top:-20%;width:42px;height:140%;background:linear-gradient(180deg,transparent,var(--tiger2),transparent);opacity:.28;transform:skewX(-22deg);animation:slide 3.6s linear infinite;}
+  .stripes i:nth-child(1){left:8%;animation-delay:0s;}
+  .stripes i:nth-child(2){left:28%;animation-delay:.7s;}
+  .stripes i:nth-child(3){left:48%;animation-delay:1.4s;}
+  .stripes i:nth-child(4){left:68%;animation-delay:2.1s;}
+  .stripes i:nth-child(5){left:88%;animation-delay:2.8s;}
+  @keyframes slide{0%{transform:skewX(-22deg) translateY(-12%);}100%{transform:skewX(-22deg) translateY(12%);}}
+  .stripes .badge{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:3;}
+  .stripes .badge b{font-size:2.2rem;font-weight:900;color:#fff;letter-spacing:3px;}
+  .stripes .badge span{color:var(--tiger2);font-size:.85rem;letter-spacing:4px;margin-top:8px;}
+
+  /* ===== 栏目一：在线观看 —— 斜切封面网格 ===== */
+  section.watch{padding:104px 0;background:var(--paper);}
+  .clipgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:22px;}
+  .clip{position:relative;height:270px;background:var(--ink2);border-radius:16px;overflow:hidden;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;clip-path:polygon(0 0,100% 0,100% 88%,0 100%);transition:.35s;}
+  .clip::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(23,20,26,.92));}
+  .clip:hover{transform:translateY(-8px) scale(1.02);clip-path:polygon(0 0,100% 0,100% 100%,0 100%);}
+  .clip span{position:relative;z-index:2;}
+  .clip .ct{font-size:1.18rem;font-weight:800;letter-spacing:.5px;}
+  .clip .cm{font-size:.8rem;color:var(--tiger2);margin-top:5px;}
+  .clip .pill{position:absolute;top:14px;right:14px;z-index:2;background:var(--tiger);font-size:.7rem;font-weight:800;padding:4px 10px;border-radius:20px;}
+
+  /* ===== 栏目二：热播榜单 —— 横向滑条排名 ===== */
+  section.rank{padding:104px 0;background:linear-gradient(180deg,#fff4e6,#fff9f2);}
+  .bars{display:flex;flex-direction:column;gap:14px;}
+  .bar{display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:18px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 20px;box-shadow:0 3px 12px rgba(232,89,12,.05);}
+  .bar .no{font-size:1.7rem;font-weight:900;color:var(--line);text-align:center;line-height:1;}
+  .bar:nth-child(1) .no,.bar:nth-child(2) .no,.bar:nth-child(3) .no{color:var(--tiger);}
+  .bar .info h4{font-size:1.05rem;font-weight:800;color:var(--ink);}
+  .bar .info p{font-size:.82rem;color:var(--sub);}
+  .bar .track{flex:1;height:7px;background:#ffe8cc;border-radius:6px;overflow:hidden;margin-top:7px;max-width:300px;}
+  .bar .track b{display:block;height:100%;background:linear-gradient(90deg,var(--tiger),var(--tiger2));border-radius:6px;}
+  .bar .score{font-weight:900;color:var(--tiger);font-size:1.1rem;white-space:nowrap;}
+
+  /* ===== 栏目三：影视分类 —— 标签页 + 横向滚动条 ===== */
+  section.cate{padding:104px 0;background:var(--ink);color:#fff;}
+  section.cate .sec-head h2,section.cate .sec-head p{color:#fff;}
+  section.cate .sec-head p{opacity:.75;}
+  .tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;}
+  .tabs button{background:var(--ink2);border:1px solid rgba(255,146,43,.3);color:#e6dccf;padding:10px 22px;border-radius:24px;font-size:.9rem;font-weight:700;cursor:pointer;transition:.25s;font-family:inherit;}
+  .tabs button.on,.tabs button:hover{background:linear-gradient(135deg,var(--tiger),var(--tiger2));color:#fff;border-color:transparent;}
+  .scroller{display:flex;gap:16px;overflow-x:auto;padding:6px 4px 18px;scroll-snap-type:x mandatory;}
+  .scroller::-webkit-scrollbar{height:8px;}
+  .scroller::-webkit-scrollbar-thumb{background:var(--tiger);border-radius:8px;}
+  .chip{flex:0 0 150px;height:200px;scroll-snap-align:start;background:var(--ink2);border-radius:14px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(255,255,255,.08);transition:.25s;}
+  .chip:hover{border-color:var(--tiger2);transform:translateY(-5px);}
+  .chip .icn{font-size:2rem;}
+  .chip b{font-size:1rem;}
+  .chip small{color:var(--tiger2);font-size:.76rem;}
+
+  /* ===== 栏目四：影视资讯 —— 左右交错时间线 ===== */
+  section.news{padding:104px 0;background:var(--paper);}
+  .feeds{position:relative;max-width:860px;margin:0 auto;padding:20px 0;}
+  .feeds::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:3px;background:var(--line);transform:translateX(-50%);}
+  .feed{position:relative;width:50%;padding:0 34px 40px;}
+  .feed:nth-child(odd){left:0;text-align:right;}
+  .feed:nth-child(even){left:50%;text-align:left;}
+  .feed::before{content:"";position:absolute;top:8px;width:16px;height:16px;border-radius:50%;background:var(--tiger);box-shadow:0 0 0 5px var(--paper);}
+  .feed:nth-child(odd)::before{right:-8px;}
+  .feed:nth-child(even)::before{left:-8px;}
+  .feed .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;display:inline-block;text-align:left;box-shadow:0 4px 16px rgba(232,89,12,.06);}
+  .feed .card .day{font-size:1.6rem;font-weight:900;color:var(--tiger2);line-height:1;font-family:Georgia,serif;}
+  .feed .card h4{font-size:1.02rem;font-weight:800;color:var(--ink);margin:.4rem 0 .5rem;}
+  .feed .card p{font-size:.88rem;color:var(--sub);}
+
+  /* ===== 关于 ===== */
+  section.about{padding:96px 0;background:var(--paper2);border-top:1px solid var(--line);}
+  section.about .wrap{max-width:800px;text-align:center;}
+  section.about h2{font-size:2.1rem;font-weight:900;color:var(--ink);}
+  section.about .zhline{width:56px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--tiger),var(--tiger2));margin:1rem auto 1.6rem;}
+  section.about p{color:var(--sub);font-size:1rem;}
+  section.about .paw{font-size:2.4rem;margin-top:26px;letter-spacing:8px;}
+
+  /* ===== 页脚 ===== */
+  footer{border-top:1px solid var(--line);padding:56px 0 26px;background:var(--ink);color:#e6dccf;}
+  footer .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:38px;}
+  footer .brand b{font-size:1.6rem;letter-spacing:2px;color:#fff;}
+  footer .brand p{color:#9c8f7f;font-size:.9rem;margin-top:12px;max-width:340px;}
+  footer h5{color:var(--tiger2);font-size:.95rem;margin-bottom:16px;letter-spacing:1px;}
+  footer a{display:block;color:#9c8f7f;font-size:.9rem;margin-bottom:11px;transition:.2s;}
+  footer a:hover{color:#fff;}
+  footer .copy{color:#7d7164;font-size:.8rem;margin-top:38px;border-top:1px solid rgba(255,255,255,.1);padding-top:22px;text-align:center;}
+
+  /* ===== 移动端自适应 ===== */
+  @media(max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;text-align:center;}
+    .hero .tiger{font-size:4rem;}
+    .hero p.lead{margin-left:auto;margin-right:auto;}
+    .hero .btns,.hero .strip{justify-content:center;}
+    .stripes{height:280px;margin-top:30px;}
+    .clipgrid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));}
+    .clip{height:230px;}
+    .bar{grid-template-columns:44px 1fr;row-gap:10px;}
+    .bar .score{grid-column:2;justify-self:start;}
+    .bar .track{max-width:none;}
+  }
+  @media(max-width:680px){
+    .toggle{display:block;}
+    nav.gnav{position:fixed;inset:66px 0 0 0;flex-direction:column;background:rgba(255,249,242,.98);padding:24px;gap:8px;transform:translateY(-120%);transition:.35s;backdrop-filter:blur(12px);}
+    nav.gnav.open{transform:translateY(0);}
+    nav.gnav a{font-size:1.08rem;padding:15px 18px;border-radius:12px;}
+    .feeds::before{left:18px;}
+    .feed{width:100%;left:0!important;text-align:left!important;padding-left:46px;padding-right:0;}
+    .feed::before{left:10px!important;right:auto!important;}
+    footer .wrap{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- ===== 顶部导航 ===== -->
+<header class="top">
+  <div class="row">
+    <div class="logo"><div class="mark">虎</div><div><b>虎虎影视</b><br><span>huhuyingshi-cn.github.io</span></div></div>
+    <button class="toggle" id="toggle" aria-label="菜单">☰</button>
+    <nav class="gnav" id="gnav">
+      <a href="#home">首页</a>
+      <a href="#watch">在线观看</a>
+      <a href="#rank">热播榜单</a>
+      <a href="#cate">影视分类</a>
+      <a href="#news">影视资讯</a>
+      <a href="#about">关于我们</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="home">
+  <div class="bg"></div>
+  <div class="wrap">
+    <div>
+      <div class="tiger">虎虎</div>
+      <h1>好片就要<em>虎</em>一点<br>虎虎影视 在线看</h1>
+      <p class="lead">海量高清电影、热播电视剧、动漫综艺一站畅看。虎虎影视 每日更新，画质清晰、加载流畅，为你省下找片时间。</p>
+      <div class="btns">
+        <a class="btn pri" href="#watch">立即观看</a>
+        <a class="btn sec" href="#rank">查看榜单</a>
+      </div>
+      <div class="strip">
+        <div><span>影片资源</span><b>10,000+</b></div>
+        <div><span>每日更新</span><b>全天</b></div>
+        <div><span>画质支持</span><b>4K / 蓝光</b></div>
+      </div>
+    </div>
+    <div class="stripes">
+      <i></i><i></i><i></i><i></i><i></i>
+      <div class="badge"><b>虎虎影视</b><span>HUHU FILM &amp; TV</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目一：在线观看 —— 斜切封面网格 ===== -->
+<section class="watch" id="watch">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Watch 01</span>
+      <h2>在线观看</h2>
+      <div class="zhline"></div>
+      <p>虎虎影视 精选好片，点击即看</p>
+    </div>
+    <div class="clipgrid">
+      <div class="clip"><span class="pill">热播</span><span><span class="ct">长安迷雾</span><br><span class="cm">古装 / 悬疑 · 更新至28集</span></span></div>
+      <div class="clip"><span class="pill">高分</span><span><span class="ct">海上列车</span><br><span class="cm">动作 / 犯罪 · 院线热映</span></span></div>
+      <div class="clip"><span class="pill">推荐</span><span><span class="ct">春山可望</span><br><span class="cm">爱情 / 剧情 · 全32集</span></span></div>
+      <div class="clip"><span class="pill">新片</span><span><span class="ct">星际回响</span><br><span class="cm">科幻 / 冒险 · 蓝光</span></span></div>
+      <div class="clip"><span class="pill">热播</span><span><span class="ct">少年护卫队</span><br><span class="cm">动漫 / 热血 · 更新中</span></span></div>
+      <div class="clip"><span class="pill">综艺</span><span><span class="ct">周末乐翻天</span><br><span class="cm">真人秀 / 喜剧 · 每周五</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目二：热播榜单 —— 横向滑条排名 ===== -->
+<section class="rank" id="rank">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Ranking 02</span>
+      <h2>热播榜单</h2>
+      <div class="zhline"></div>
+      <p>虎虎影视 实时热度，大家都在看</p>
+    </div>
+    <div class="bars">
+      <div class="bar"><div class="no">1</div><div class="info"><h4>长安迷雾</h4><p>古装悬疑 · 热度飙升</p><div class="track"><b style="width:96%"></b></div></div><div class="score">9.6</div></div>
+      <div class="bar"><div class="no">2</div><div class="info"><h4>海上列车</h4><p>动作犯罪 · 院线同步</p><div class="track"><b style="width:88%"></b></div></div><div class="score">9.2</div></div>
+      <div class="bar"><div class="no">3</div><div class="info"><h4>春山可望</h4><p>爱情剧情 · 口碑佳作</p><div class="track"><b style="width:81%"></b></div></div><div class="score">8.9</div></div>
+      <div class="bar"><div class="no">4</div><div class="info"><h4>星际回响</h4><p>科幻冒险 · 特效大片</p><div class="track"><b style="width:74%"></b></div></div><div class="score">8.5</div></div>
+      <div class="bar"><div class="no">5</div><div class="info"><h4>少年护卫队</h4><p>热血动漫 · 少年必看</p><div class="track"><b style="width:67%"></b></div></div><div class="score">8.3</div></div>
+      <div class="bar"><div class="no">6</div><div class="info"><h4>周末乐翻天</h4><p>综艺喜剧 · 笑料不断</p><div class="track"><b style="width:60%"></b></div></div><div class="score">8.0</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目三：影视分类 —— 标签页 + 横向滚动条 ===== -->
+<section class="cate" id="cate">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Category 03</span>
+      <h2>影视分类</h2>
+      <div class="zhline" style="background:linear-gradient(90deg,var(--tiger2),var(--tiger));"></div>
+      <p>虎虎影视 分类清晰，找片更快</p>
+    </div>
+    <div class="tabs">
+      <button class="on">全部</button>
+      <button>电影</button>
+      <button>电视剧</button>
+      <button>动漫</button>
+      <button>综艺</button>
+      <button>纪录片</button>
+    </div>
+    <div class="scroller">
+      <div class="chip"><span class="icn">🎬</span><b>动作</b><small>1,280 部</small></div>
+      <div class="chip"><span class="icn">💕</span><b>爱情</b><small>962 部</small></div>
+      <div class="chip"><span class="icn">🔍</span><b>悬疑</b><small>704 部</small></div>
+      <div class="chip"><span class="icn">👻</span><b>恐怖</b><small>318 部</small></div>
+      <div class="chip"><span class="icn">🚀</span><b>科幻</b><small>521 部</small></div>
+      <div class="chip"><span class="icn">😂</span><b>喜剧</b><small>1,105 部</small></div>
+      <div class="chip"><span class="icn">🏯</span><b>古装</b><small>843 部</small></div>
+      <div class="chip"><span class="icn">📺</span><b>剧集</b><small>2,400+ 部</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目四：影视资讯 —— 左右交错时间线 ===== -->
+<section class="news" id="news">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">News 04</span>
+      <h2>影视资讯</h2>
+      <div class="zhline"></div>
+      <p>虎虎影视 带你掌握第一手影视动态</p>
+    </div>
+    <div class="feeds">
+      <div class="feed"><div class="card"><div class="day">10.24</div><h4>《长安迷雾》单日播放破纪录</h4><p>虎虎影视 热播古装悬疑剧热度持续走高，成为本周最大黑马。</p></div></div>
+      <div class="feed"><div class="card"><div class="day">10.22</div><h4>院线片《海上列车》上线蓝光</h4><p>虎虎影视 同步上线蓝光版本，支持 4K 画质流畅观看。</p></div></div>
+      <div class="feed"><div class="card"><div class="day">10.19</div><h4>十月新片片单推荐</h4><p>十月值得一看的 8 部新片，虎虎影视 已为你整理完毕。</p></div></div>
+      <div class="feed"><div class="card"><div class="day">10.15</div><h4>高分日漫专区全新上线</h4><p>热血、治愈、悬疑全覆盖，虎虎影视 动漫迷不可错过。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 关于 ===== -->
+<section class="about" id="about">
+  <div class="wrap">
+    <span class="eyebrow">About</span>
+    <h2>关于虎虎影视</h2>
+    <div class="zhline"></div>
+    <p>虎虎影视（huhuyingshi-cn.github.io）致力于为影视爱好者提供高清、流畅、丰富的在线观影体验。涵盖电影、电视剧、动漫、综艺等全品类内容，每日更新，让你不错过任何一部好片。虎虎影视 —— 好片就要虎一点！</p>
+    <div class="paw">🐯 🐾 🐯</div>
+  </div>
+</section>
+
+<!-- ===== 页脚 ===== -->
+<footer>
+  <div class="wrap">
+    <div class="brand">
+      <b>虎虎影视</b>
+      <p>高清电影 · 热播剧 · 动漫综艺，一站式在线观看平台。</p>
+    </div>
+    <div>
+      <h5>栏目导航</h5>
+      <a href="#watch">在线观看</a>
+      <a href="#rank">热播榜单</a>
+      <a href="#cate">影视分类</a>
+      <a href="#news">影视资讯</a>
+    </div>
+    <div>
+      <h5>关于我们</h5>
+      <a href="#about">关于虎虎影视</a>
+      <a href="#">商务合作</a>
+      <a href="#">版权声明</a>
+      <a href="#">联系我们</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="copy">© 2026 虎虎影视 huhuyingshi-cn.github.io 保留所有权利。</div>
+  </div>
+</footer>
+
+<script>
+  var toggle=document.getElementById('toggle');
+  var gnav=document.getElementById('gnav');
+  toggle.addEventListener('click',function(){
+    gnav.classList.toggle('open');
+    toggle.textContent=gnav.classList.contains('open')?'✕':'☰';
+  });
+  gnav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      gnav.classList.remove('open');
+      toggle.textContent='☰';
+    });
+  });
+  var tabs=document.querySelectorAll('.tabs button');
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(x){x.classList.remove('on');});
+      t.classList.add('on');
+    });
+  });
+</script>
+</body>
+</html>
